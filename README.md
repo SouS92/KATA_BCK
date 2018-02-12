@@ -1,4 +1,4 @@
-**`Bank Accounts APP`**
+#Bank Accounts APP
 
 **_Technical structure_**
 1. **Main coding language :**  Java v8
