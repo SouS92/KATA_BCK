@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.talan.sou</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>BankAccountsApp</artifactId>
+	<version>1.2 RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>BankAccountApplication</name>
