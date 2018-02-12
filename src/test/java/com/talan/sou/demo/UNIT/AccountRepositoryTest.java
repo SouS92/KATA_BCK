@@ -1,7 +1,7 @@
-package com.talan.sou.demo.UNIT;
+package com.talan.sou.demo.unit;
 
-import com.talan.sou.demo.POJO.Account;
-import com.talan.sou.demo.REPO.AccountRepository;
+import com.talan.sou.demo.domain.Account;
+import com.talan.sou.demo.repository.AccountRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,12 +54,13 @@ public class AccountRepositoryTest {
     @Test
     public void accountOpDeposit(){
         Account a = new Account();
+        a.setAccountUID(2);
         a.setBalance(100);
         a.setAccountName("souhaile");
         entityManager.merge(a);
         entityManager.flush();
 
-        Account b = accountRepository.findByAccountName("souhaile");
+        Account b = accountRepository.findByAccountUID(2);
         b.setBalance(b.getBalance() + 100);
 
         assertThat(b.getBalance()).isEqualTo(a.getBalance()+100);

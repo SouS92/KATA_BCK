@@ -1,13 +1,9 @@
-package com.talan.sou.demo.CONTROLLER;
+package com.talan.sou.demo.controller;
 
-import com.talan.sou.demo.DV.DvAccount;
-import com.talan.sou.demo.DV.DvHistory;
-import com.talan.sou.demo.DV.DvOperation;
-import com.talan.sou.demo.MAPPING.DVPOJOOperation;
-import com.talan.sou.demo.POJO.Account;
-import com.talan.sou.demo.POJO.Op;
-import com.talan.sou.demo.POJO.Operation;
-import com.talan.sou.demo.SERVICE.INTERFACE.AccountService;
+
+import com.talan.sou.demo.domain.Account;
+import com.talan.sou.demo.domain.Operation;
+import com.talan.sou.demo.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,44 +16,14 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
-    @RequestMapping("/")
-    public List<DvAccount> getAccounts(){
-    return accountService.getAccounts();
+    @RequestMapping("/accounts")
+    public List<Account> getAccounts(){
+        return accountService.getAccounts();
     }
 
-
-    @RequestMapping(value = "/opAccount",method = RequestMethod.POST)
-    public Account opAccount(@RequestBody DvOperation operation){
-
-         Operation op = DVPOJOOperation.DvtoPojoOperation(operation);
-         accountService.accountOp(op.getFromAccount(),op.getOp(),op.getAmount());
-
-            return new Account();
-    }
-
-
-    @RequestMapping(value = "/listops/{uid}",method = RequestMethod.GET)
-    public List<DvHistory> getListOps(@PathVariable("uid") long uid){
-
-        return accountService.getListOpsPerAccount(uid);
-    }
-
-    @RequestMapping(value = "/transferOpAccount",method = RequestMethod.POST)
-    public Account transferOpAccount(@RequestBody DvOperation operation){
-
-
-        Operation op = DVPOJOOperation.DvtoPojoOperation(operation);
-        accountService.transferOp(op.getFromAccount(),op.getToAccount(),op.getAmount());
-
-
-        return new Account();
-    }
-
-
-    @RequestMapping(value = "/createAccount",method = RequestMethod.POST)
-    public Account saveAccount(@RequestBody Account account){
-        accountService.insertNewAccount(new DvAccount(account.getAccountUID(),account.getAccountName(),account.getBalance()));
-        return account;
+    @RequestMapping(value = "/accounts",method = RequestMethod.POST)
+    public void saveAccount(@RequestBody Account account){
+        accountService.insertNewAccount(new Account(account.getAccountName(),account.getBalance()));
     }
 
 }
