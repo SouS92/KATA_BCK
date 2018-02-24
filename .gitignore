@@ -1,5 +1,6 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
+/src/test/java/com/talan/sou/demo/bdd/htmlReports/*
 
 ### STS ###
 .apt_generated
@@ -14,6 +15,7 @@ target/
 *.iws
 *.iml
 *.ipr
+**/.DS_Store
 
 ### NetBeans ###
 nbproject/private/
