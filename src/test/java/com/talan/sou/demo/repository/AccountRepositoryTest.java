@@ -1,7 +1,6 @@
-package com.talan.sou.demo.tdd.repository;
+package com.talan.sou.demo.repository;
 
 import com.talan.sou.demo.domain.Account;
-import com.talan.sou.demo.repository.AccountRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.talan.sou.demo.tdd.service;
+package com.talan.sou.demo.service.impl;
 
 import com.talan.sou.demo.domain.Account;
 import com.talan.sou.demo.repository.AccountRepository;
@@ -7,19 +7,16 @@ import com.talan.sou.demo.service.AccountService;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyList;
 import static org.mockito.Matchers.anyListOf;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import com.talan.sou.demo.service.impl.AccountServiceImp;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.*;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;

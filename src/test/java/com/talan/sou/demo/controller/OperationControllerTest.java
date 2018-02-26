@@ -1,7 +1,6 @@
-package com.talan.sou.demo.tdd.controller;
+package com.talan.sou.demo.controller;
 
 
-import com.talan.sou.demo.controller.OperationController;
 import com.talan.sou.demo.domain.Op;
 import com.talan.sou.demo.domain.Operation;
 import com.talan.sou.demo.service.OperationService;
@@ -38,10 +37,6 @@ public class OperationControllerTest {
     private OperationService service;
 
     @Test
-    public void opAccount() throws Exception {
-    }
-
-    @Test
     public void getListOps() throws Exception {
         List<Operation> listOps = Arrays.asList(new Operation(1,2,500, LocalDate.now(), Op.TRANSFER));
         given(service.getListOpsPerAccount(1)).willReturn(listOps);
@@ -53,10 +48,6 @@ public class OperationControllerTest {
                 .andExpect(jsonPath("$[0].amount",is(500)));
 
 
-    }
-
-    @Test
-    public void transferOpAccount() throws Exception {
     }
 
 }

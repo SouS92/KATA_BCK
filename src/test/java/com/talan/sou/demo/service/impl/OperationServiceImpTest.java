@@ -1,21 +1,15 @@
-package com.talan.sou.demo.tdd.service;
+package com.talan.sou.demo.service.impl;
 
 import com.talan.sou.demo.domain.Account;
 import com.talan.sou.demo.domain.Op;
 import com.talan.sou.demo.domain.Operation;
-import com.talan.sou.demo.repository.AccountRepository;
-import com.talan.sou.demo.repository.OperationsRepository;
 import com.talan.sou.demo.service.AccountService;
 import com.talan.sou.demo.service.OperationService;
-import com.talan.sou.demo.service.impl.AccountServiceImp;
-import com.talan.sou.demo.service.impl.OperationServiceImp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -23,10 +17,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -61,7 +52,7 @@ public class OperationServiceImpTest {
         //End Mockito
 
         account = accountService.getAccountByName("firstAccount");
-        operationService.accountOp(account.getAccountUID(),Op.WITHDRAW,200);
+        operationService.accountOp(account.getAccountUID(), Op.WITHDRAW,200);
         operationService.accountOp(account.getAccountUID(),Op.WITHDRAW,200);
 
 

@@ -1,6 +1,5 @@
-package com.talan.sou.demo.tdd.controller;
+package com.talan.sou.demo.controller;
 
-import com.talan.sou.demo.controller.AccountController;
 import com.talan.sou.demo.domain.Account;
 import com.talan.sou.demo.service.AccountService;
 import org.junit.Test;
