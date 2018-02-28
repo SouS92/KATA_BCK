@@ -37,7 +37,7 @@ public class OperationControllerTest {
     private OperationService service;
 
     @Test
-    public void getListOps() throws Exception {
+    public void return_operations_list_per_account() throws Exception {
         List<Operation> listOps = Arrays.asList(new Operation(1,2,500, LocalDate.now(), Op.TRANSFER));
         given(service.getListOpsPerAccount(1)).willReturn(listOps);
 

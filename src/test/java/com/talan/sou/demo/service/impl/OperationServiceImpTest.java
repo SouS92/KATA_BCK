@@ -44,7 +44,7 @@ public class OperationServiceImpTest {
     public AccountService accountService;
 
     @Test
-    public void getListOpsPerAccount() throws Exception {
+    public void should_return_list_operations_per_account() throws Exception {
 
         //Prepare Mockito
         Account account = new Account("firstAccount",1200);
@@ -60,7 +60,7 @@ public class OperationServiceImpTest {
     }
 
     @Test
-    public void accountOp() throws Exception {
+    public void make_account_operation() throws Exception {
 
         //Prepare Mockito
         Account account = new Account("firstAccount",1200);
@@ -83,7 +83,7 @@ public class OperationServiceImpTest {
     }
 
     @Test
-    public void transferOp() throws Exception {
+    public void transfer_amount_from_account_to_account() throws Exception {
 
         //Prepare Mockito
         Account account = new Account("firstAccount",1200);

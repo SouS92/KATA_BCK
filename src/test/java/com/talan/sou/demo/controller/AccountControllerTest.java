@@ -34,7 +34,7 @@ public class AccountControllerTest {
 
 
     @Test
-    public void getAccounts() throws Exception {
+    public void return_accounts_list() throws Exception {
 
         Account account = new Account();
         account.setBalance(1000);
@@ -49,7 +49,7 @@ public class AccountControllerTest {
                 .andExpect(jsonPath("$", hasSize(1)));
     }
     @Test
-    public void saveAccount() throws Exception {
+    public void insert_new_account() throws Exception {
 
         Account account = new Account();
         account.setBalance(1000);

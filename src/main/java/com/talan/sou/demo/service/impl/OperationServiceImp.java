@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+
 @Service
 public class OperationServiceImp implements OperationService {
 
@@ -26,6 +27,11 @@ public class OperationServiceImp implements OperationService {
     @Autowired
     private AccountService accountService;
 
+
+    /** Récupérer les opérations effectués pour un compte donné - avec son uid
+     * @param uid uid du compte
+     * @return liste des opérations
+     */
     @Override
     public List<Operation> getListOpsPerAccount(long uid) {
         List<Operation> listOp = operationsRepository.findByAccounts(uid);
@@ -41,7 +47,11 @@ public class OperationServiceImp implements OperationService {
         }
         return listOp;
     }
-
+    /** effectuer une opération pour un compte spécifique
+     * @param uid compte concerné par l'opération
+     * @param o type d'opération
+     * @param amount le montant de l'opération
+     */
     @Override
     public void accountOp(long uid, Op o, long amount) {
         Account ac = accountRepository.findByAccountUID(uid);
@@ -54,7 +64,12 @@ public class OperationServiceImp implements OperationService {
         operationsRepository.save(op);
         accountRepository.save(ac);
     }
-
+    /** transférer un montant d'un compte vers un autre compte
+     * @param uid compte débité
+     * @param secondUid compte crédité
+     * @param amount montant du transfert
+     *
+     */
     @Override
     public void transferOp(long uid, long secondUid, long amount) {
         Account fromAccount = accountRepository.findByAccountUID(uid);

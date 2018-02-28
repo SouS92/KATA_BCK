@@ -22,7 +22,7 @@ public class AccountRepositoryTest {
     private AccountRepository accountRepository;
 
     @Test
-    public void insertNewAccountTest(){
+    public void repo_insert_new_account(){
         Account a = new Account();
         a.setBalance(100);
         a.setAccountName("souhaile");
@@ -36,7 +36,7 @@ public class AccountRepositoryTest {
     }
 
     @Test
-    public void accountOpWithdraw(){
+    public void withdraw_amount_from_account(){
         Account a = new Account();
         a.setBalance(100);
         a.setAccountName("souhaile");
@@ -51,7 +51,7 @@ public class AccountRepositoryTest {
     }
 
     @Test
-    public void accountOpDeposit(){
+    public void deposit_amount_from_account(){
         Account a = new Account();
         a.setAccountUID(2);
         a.setBalance(100);

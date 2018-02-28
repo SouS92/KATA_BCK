@@ -46,7 +46,7 @@ public class AccountServiceImpTest {
     }
 
     @Test
-    public void insertNewAccount(){
+    public void should_insert_new_account(){
 
 
         //Prepare Mockito
@@ -60,7 +60,7 @@ public class AccountServiceImpTest {
     }
 
     @Test
-    public void insertNewAccounts() {
+    public void should_insert_new_accounts() {
 
         //Prepare Mockito
         Account account = new Account("firstAccount",1200);
@@ -77,7 +77,7 @@ public class AccountServiceImpTest {
 
 
     @Test
-    public void getAccounts() {
+    public void return_all_accounts_list() {
 
         Account account = new Account("firstAccount",1200);
         account.setAccountUID(99);
@@ -93,7 +93,7 @@ public class AccountServiceImpTest {
     }
 
     @Test
-    public void getAccountByName() {
+    public void should_return_account_by_name() {
 
         //Mocking
         Account account = new Account("firstAccount",1200);
@@ -108,7 +108,7 @@ public class AccountServiceImpTest {
     }
 
     @Test
-    public void getAccountByUID() {
+    public void should_return_account_by_uid() {
 
         //Mocking
         Account account = new Account("firstAccount",1200);
