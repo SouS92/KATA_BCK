@@ -47,7 +47,7 @@ public class Operation {
         this.dateOp = dateOp;
         this.op = op;
         this.typeOp = Op.getValEnum(op);
-        this.opDate = dateOp.format( DateTimeFormatter.ISO_LOCAL_DATE);
+        this.opDate = dateOp.format(DateTimeFormatter.ISO_LOCAL_DATE);
     }
 
 }
