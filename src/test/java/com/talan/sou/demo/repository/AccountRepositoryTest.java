@@ -53,13 +53,12 @@ public class AccountRepositoryTest {
     @Test
     public void deposit_amount_from_account(){
         Account a = new Account();
-        a.setAccountUID(2);
         a.setBalance(100);
         a.setAccountName("souhaile");
         entityManager.merge(a);
-        entityManager.flush();
+        //entityManager.flush();
 
-        Account b = accountRepository.findByAccountUID(2);
+        Account b = accountRepository.findByAccountUID(3);
         b.setBalance(b.getBalance() + 100);
 
         assertThat(b.getBalance()).isEqualTo(a.getBalance()+100);

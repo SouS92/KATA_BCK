@@ -93,7 +93,7 @@ public class AccountServiceImpTest {
     }
 
     @Test
-    public void should_return_account_by_name() {
+    public void should_return_account_by_nameTest() {
 
         //Mocking
         Account account = new Account("firstAccount",1200);
